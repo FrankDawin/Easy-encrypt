@@ -1,4 +1,3 @@
-import cryptography
 from cryptography.fernet import Fernet
 
 
@@ -7,7 +6,7 @@ class Crypt:
     def __init__(self):
         self.key = None
 
-    def generate_key(self, filename):
+    def generate_key(self, filename="key"):
         """Take a filename to store the generated key"""
 
         self.key = Fernet.generate_key()
@@ -50,9 +49,6 @@ class Crypt:
 
 if __name__ == '__main__':
     a = Crypt()
-    a.read_key("filekey.key")
-    a.encrypt_file("test.txt", "bonnechance.txt")
-    a.decrypt_file("bonnechance.txt", "thanks.txt")
 
 
 
